@@ -12,7 +12,7 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 - **Active Directory Domain Services (ADDS)** - Implemented for user and device authentication.
 - **DNS Server** - Configured within the domain controller.
 - **VirtualBox Guest Additions** - For better performance and usability.
-- **Internet Explorer Configuration** - To download required scripts and configurations.
+
 
 ## Network Configuration
 The following diagram illustrates the network setup of the lab:
@@ -25,6 +25,7 @@ The following diagram illustrates the network setup of the lab:
   - **NIC (Internet):** Obtains IP from home router via DHCP.
   - **NIC (Internal):** Manually assigned IP **172.16.0.1**.
   - Runs **Active Directory (AD DS)** and acts as a **DHCP server**.
+  - This is going to house Active Directory. We're going to give this virtual machine two network adapters. One is going to be used to connect to the outside internet, and the other one is going to be used to connect to     the VirtualBox kind of private network that the clients are going to connect to.
 
 - **Client1 (Windows 10)**
   - Connected to **internal network**.
@@ -46,20 +47,33 @@ The following diagram illustrates the network setup of the lab:
   - **Domain Controller (DC)** running Windows Server 2019
   - **Client1** running Windows 10
 
- **Screenshot Placeholder:** _Upload a screenshot of VirtualBox showing both VMs_
+
 
 ### 2. **Configuring the Domain Controller (DC)**
 - Installed **Windows Server 2019** on the DC VM.
 - Assigned **two network adapters**:
   - **One** for internet connectivity (NAT mode).
   - **One** for internal VirtualBox network (manual IP configuration).
+![Image](https://github.com/user-attachments/assets/c97a22c5-7c02-43e4-946a-eebc213240ae)
+    
 - Set up **Static IP Addressing** for the internal NIC.
+
+![Image](https://github.com/user-attachments/assets/37b64be0-df23-457a-b977-cbe9f5206ba0)
 - Installed **Active Directory Domain Services (ADDS)**.
+
+![Image](https://github.com/user-attachments/assets/2c1d1912-f831-4775-990d-c2f16a78d2b4)
 - Created a **new domain** (`mydomain.com`).
 - Configured **NAT & Routing** to allow client access to the internet.
 - Installed and configured **DHCP Server** to provide automatic IP addresses to clients.
+ ![Image](https://github.com/user-attachments/assets/ac4fcd26-c31a-49ff-b80b-0765687d9f1a)
+ the dhcp server is running
+ ![Image](https://github.com/user-attachments/assets/dccf729b-2859-42cc-b311-b2156bb1989e)
+ 
+ ![Image](https://github.com/user-attachments/assets/e49f1288-126b-4393-8bf7-da1721767987)
 
- **Screenshot Placeholder:** _Upload a screenshot of the DC network configuration_
+
+
+ ![Image](https://github.com/user-attachments/assets/c111ed9e-131a-4ae9-b379-d5881a29ae41)
 
 ### 3. **Automated User Creation using PowerShell**
 - Used a **PowerShell script** to bulk create **1000 Active Directory users**.
@@ -67,7 +81,9 @@ The following diagram illustrates the network setup of the lab:
 - Created an **organizational unit (OU)** to store users.
 - The PowerShell script pulled names from a text file and automated account creation.
 
- **Screenshot Placeholder:** _Upload a screenshot of the PowerShell script in execution_
+
+![Image](https://github.com/user-attachments/assets/05f7d312-1799-4156-bacc-4bc1aadf34f3)
+![Image](https://github.com/user-attachments/assets/5dd591ae-28fe-495b-a2c7-0648cb322652)
 
 ### 4. **Setting Up Windows 10 Client Machine**
 - Installed **Windows 10** on the Client VM.
@@ -76,7 +92,13 @@ The following diagram illustrates the network setup of the lab:
 - Joined the **client machine to the domain (`mydomain.com`)**.
 - Logged in using a domain user account created from the PowerShell script.
 
-**Screenshot Placeholder:** _Upload a screenshot of Client1 successfully joined to the domain_
+ ![Image](https://github.com/user-attachments/assets/8095abf5-819b-4bfb-b935-241a67090a55)
+
+![Image](https://github.com/user-attachments/assets/eeb9bb64-ac60-40b1-827e-a83d790bb24e)
+
+![Image](https://github.com/user-attachments/assets/adce530b-6c3e-4c42-b7ff-cd83a054043c)
+
+![Image](https://github.com/user-attachments/assets/b0ea8fdf-9ee8-464e-9df8-55a710ed7d5b)
 
 ## Key Steps Followed
 ### **Step 1: VirtualBox Setup**
