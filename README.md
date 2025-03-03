@@ -14,6 +14,29 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 - **VirtualBox Guest Additions** - For better performance and usability.
 - **Internet Explorer Configuration** - To download required scripts and configurations.
 
+## Network Configuration
+The following diagram illustrates the network setup of the lab:
+
+![Network Configuration](image.png)
+
+### **Key Network Components:**
+- **Domain Controller (DC - Server 2019)**
+  - **NIC (Internet):** Obtains IP from home router via DHCP.
+  - **NIC (Internal):** Manually assigned IP **172.16.0.1**.
+  - Runs **Active Directory (AD DS)** and acts as a **DHCP server**.
+
+- **Client1 (Windows 10)**
+  - Connected to **internal network**.
+  - Receives IP from **DHCP Server (DC - 172.16.0.1)**.
+
+- **DHCP Configuration**
+  - **Scope:** 172.16.0.100 - 172.16.0.200
+  - **Gateway:** 172.16.0.1 (Domain Controller)
+  - **DNS:** 127.0.0.1 (Localhost for DC)
+
+- **PowerShell Automation:**
+  - Bulk creation of **1,000+ Active Directory users**.
+
 ## Lab Setup
 ### 1. **Installing Virtual Machines**
 - Downloaded and installed **VirtualBox** and its extension pack.
@@ -22,7 +45,7 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
   - **Domain Controller (DC)** running Windows Server 2019
   - **Client1** running Windows 10
 
- **Screenshot Placeholder:** _Upload a screenshot of VirtualBox showing both VMs_
+📌 **Screenshot Placeholder:** _Upload a screenshot of VirtualBox showing both VMs_
 
 ### 2. **Configuring the Domain Controller (DC)**
 - Installed **Windows Server 2019** on the DC VM.
@@ -35,7 +58,7 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 - Configured **NAT & Routing** to allow client access to the internet.
 - Installed and configured **DHCP Server** to provide automatic IP addresses to clients.
 
- **Screenshot Placeholder:** _Upload a screenshot of the DC network configuration_
+📌 **Screenshot Placeholder:** _Upload a screenshot of the DC network configuration_
 
 ### 3. **Automated User Creation using PowerShell**
 - Used a **PowerShell script** to bulk create **1000 Active Directory users**.
@@ -43,7 +66,7 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 - Created an **organizational unit (OU)** to store users.
 - The PowerShell script pulled names from a text file and automated account creation.
 
- **Screenshot Placeholder:** _Upload a screenshot of the PowerShell script in execution_
+📌 **Screenshot Placeholder:** _Upload a screenshot of the PowerShell script in execution_
 
 ### 4. **Setting Up Windows 10 Client Machine**
 - Installed **Windows 10** on the Client VM.
@@ -52,7 +75,7 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 - Joined the **client machine to the domain (`mydomain.com`)**.
 - Logged in using a domain user account created from the PowerShell script.
 
- **Screenshot Placeholder:** _Upload a screenshot of Client1 successfully joined to the domain_
+📌 **Screenshot Placeholder:** _Upload a screenshot of Client1 successfully joined to the domain_
 
 ## Key Steps Followed
 ### **Step 1: VirtualBox Setup**
@@ -80,7 +103,7 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 4. Joined the **domain (mydomain.com)**.
 5. Logged in using **domain credentials**.
 
- **Screenshot Placeholder:** _Upload a screenshot of successful user login_
+📌 **Screenshot Placeholder:** _Upload a screenshot of successful user login_
 
 ## Achievements
 - Successfully **deployed an Active Directory environment**.
@@ -98,9 +121,12 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 ## Conclusion
 This project provides foundational knowledge for managing **Windows Server, Active Directory, and enterprise networking**. It serves as a stepping stone for those pursuing careers in **System Administration, Network Security, or IT Infrastructure Management**.
 
-
+## Author
+- **Dhwaj** (Followed and implemented from a YouTube tutorial, modified and documented for GitHub)
 
 ## Screenshots
- **Upload relevant screenshots to make the documentation more visually informative!**
+📌 **Upload relevant screenshots to make the documentation more visually informative!**
 
+---
+Feel free to fork, modify, or expand upon this project!
 
