@@ -45,7 +45,7 @@ The following diagram illustrates the network setup of the lab:
   - **Domain Controller (DC)** running Windows Server 2019
   - **Client1** running Windows 10
 
-📌 **Screenshot Placeholder:** _Upload a screenshot of VirtualBox showing both VMs_
+ **Screenshot Placeholder:** _Upload a screenshot of VirtualBox showing both VMs_
 
 ### 2. **Configuring the Domain Controller (DC)**
 - Installed **Windows Server 2019** on the DC VM.
@@ -58,7 +58,7 @@ The following diagram illustrates the network setup of the lab:
 - Configured **NAT & Routing** to allow client access to the internet.
 - Installed and configured **DHCP Server** to provide automatic IP addresses to clients.
 
-📌 **Screenshot Placeholder:** _Upload a screenshot of the DC network configuration_
+ **Screenshot Placeholder:** _Upload a screenshot of the DC network configuration_
 
 ### 3. **Automated User Creation using PowerShell**
 - Used a **PowerShell script** to bulk create **1000 Active Directory users**.
@@ -66,7 +66,7 @@ The following diagram illustrates the network setup of the lab:
 - Created an **organizational unit (OU)** to store users.
 - The PowerShell script pulled names from a text file and automated account creation.
 
-📌 **Screenshot Placeholder:** _Upload a screenshot of the PowerShell script in execution_
+ **Screenshot Placeholder:** _Upload a screenshot of the PowerShell script in execution_
 
 ### 4. **Setting Up Windows 10 Client Machine**
 - Installed **Windows 10** on the Client VM.
@@ -75,7 +75,7 @@ The following diagram illustrates the network setup of the lab:
 - Joined the **client machine to the domain (`mydomain.com`)**.
 - Logged in using a domain user account created from the PowerShell script.
 
-📌 **Screenshot Placeholder:** _Upload a screenshot of Client1 successfully joined to the domain_
+**Screenshot Placeholder:** _Upload a screenshot of Client1 successfully joined to the domain_
 
 ## Key Steps Followed
 ### **Step 1: VirtualBox Setup**
@@ -103,7 +103,7 @@ The following diagram illustrates the network setup of the lab:
 4. Joined the **domain (mydomain.com)**.
 5. Logged in using **domain credentials**.
 
-📌 **Screenshot Placeholder:** _Upload a screenshot of successful user login_
+ **Screenshot Placeholder:** _Upload a screenshot of successful user login_
 
 ## Achievements
 - Successfully **deployed an Active Directory environment**.
@@ -121,11 +121,7 @@ The following diagram illustrates the network setup of the lab:
 ## Conclusion
 This project provides foundational knowledge for managing **Windows Server, Active Directory, and enterprise networking**. It serves as a stepping stone for those pursuing careers in **System Administration, Network Security, or IT Infrastructure Management**.
 
-## Author
-- **Dhwaj** (Followed and implemented from a YouTube tutorial, modified and documented for GitHub)
 
-## Screenshots
-📌 **Upload relevant screenshots to make the documentation more visually informative!**
 
 ---
 Feel free to fork, modify, or expand upon this project!
