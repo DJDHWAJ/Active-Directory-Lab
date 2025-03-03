@@ -58,32 +58,43 @@ The following diagram illustrates the network setup of the lab:
     
 - Set up **Static IP Addressing** for the internal NIC.
 
-![Image](https://github.com/user-attachments/assets/37b64be0-df23-457a-b977-cbe9f5206ba0)
+  ![Image](https://github.com/user-attachments/assets/37b64be0-df23-457a-b977-cbe9f5206ba0)
 - Installed **Active Directory Domain Services (ADDS)**.
+  ![Image](https://github.com/user-attachments/assets/e49f1288-126b-4393-8bf7-da1721767987)
 
-![Image](https://github.com/user-attachments/assets/2c1d1912-f831-4775-990d-c2f16a78d2b4)
 - Created a **new domain** (`mydomain.com`).
 - Configured **NAT & Routing** to allow client access to the internet.
 - Installed and configured **DHCP Server** to provide automatic IP addresses to clients.
- ![Image](https://github.com/user-attachments/assets/ac4fcd26-c31a-49ff-b80b-0765687d9f1a)
- the dhcp server is running
  ![Image](https://github.com/user-attachments/assets/dccf729b-2859-42cc-b311-b2156bb1989e)
+
+
+-the dhcp server is running.
+  
+  ![Image](https://github.com/user-attachments/assets/c111ed9e-131a-4ae9-b379-d5881a29ae41) 
+
  
- ![Image](https://github.com/user-attachments/assets/e49f1288-126b-4393-8bf7-da1721767987)
 
 
 
- ![Image](https://github.com/user-attachments/assets/c111ed9e-131a-4ae9-b379-d5881a29ae41)
+ 
 
 ### 3. **Automated User Creation using PowerShell**
 - Used a **PowerShell script** to bulk create **1000 Active Directory users**.
 - Each user was assigned a default password (`Password1`).
 - Created an **organizational unit (OU)** to store users.
 - The PowerShell script pulled names from a text file and automated account creation.
+![Image](https://github.com/user-attachments/assets/2c1d1912-f831-4775-990d-c2f16a78d2b4)
+
+-the script is creating fake users and assigning them passwords
 
 
 ![Image](https://github.com/user-attachments/assets/05f7d312-1799-4156-bacc-4bc1aadf34f3)
+
+
+-this photo shows that there are users created and they are being showed in the active dirrctory user list
+
 ![Image](https://github.com/user-attachments/assets/5dd591ae-28fe-495b-a2c7-0648cb322652)
+
 
 ### 4. **Setting Up Windows 10 Client Machine**
 - Installed **Windows 10** on the Client VM.
@@ -91,13 +102,15 @@ The following diagram illustrates the network setup of the lab:
 - Verified DHCP was assigning IP addresses correctly.
 - Joined the **client machine to the domain (`mydomain.com`)**.
 - Logged in using a domain user account created from the PowerShell script.
-
+- Here windows 10 got the ip address from the dhcp server and its default gateway as it was copnfigured in the dhcp server.
  ![Image](https://github.com/user-attachments/assets/8095abf5-819b-4bfb-b935-241a67090a55)
-
+- Windows can easily ping the outside internet so this means out network configuration is working properly
 ![Image](https://github.com/user-attachments/assets/eeb9bb64-ac60-40b1-827e-a83d790bb24e)
 
+Can see form this image that it shows up in dhcp in the server that out client1  ( windows 10) has been leased an ip address
 ![Image](https://github.com/user-attachments/assets/adce530b-6c3e-4c42-b7ff-cd83a054043c)
 
+Now in the active directory user and computer part, this shows that this pc is a part of the domain
 ![Image](https://github.com/user-attachments/assets/b0ea8fdf-9ee8-464e-9df8-55a710ed7d5b)
 
 ## Key Steps Followed
@@ -126,7 +139,7 @@ The following diagram illustrates the network setup of the lab:
 4. Joined the **domain (mydomain.com)**.
 5. Logged in using **domain credentials**.
 
- **Screenshot Placeholder:** _Upload a screenshot of successful user login_
+
 
 ## Achievements
 - Successfully **deployed an Active Directory environment**.
@@ -135,17 +148,8 @@ The following diagram illustrates the network setup of the lab:
 - Demonstrated how a domain-joined client can authenticate with AD.
 - Simulated a small **corporate IT network setup** for hands-on learning.
 
-## How to Use This Lab
-1. **Follow the setup instructions** to build the environment from scratch.
-2. Experiment with **Group Policies, User Management, and Network Configurations**.
-3. Modify the PowerShell script to create **custom users or additional OUs**.
-4. Extend the lab by adding **file servers, remote desktop services, or security policies**.
 
 ## Conclusion
-This project provides foundational knowledge for managing **Windows Server, Active Directory, and enterprise networking**. It serves as a stepping stone for those pursuing careers in **System Administration, Network Security, or IT Infrastructure Management**.
+This project provides foundational knowledge for managing **Windows Server, Active Directory, and enterprise networking**. 
 
-
-
----
-Feel free to fork, modify, or expand upon this project!
 
