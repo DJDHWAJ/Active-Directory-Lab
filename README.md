@@ -17,7 +17,8 @@ This project focuses on setting up an **Active Directory (AD) lab** on a persona
 ## Network Configuration
 The following diagram illustrates the network setup of the lab:
 
-![Network Configuration](image.png)
+
+![Image](https://github.com/user-attachments/assets/8e4a80f4-d8a8-45d8-8fe8-b26ee8fa4db4)
 
 ### **Key Network Components:**
 - **Domain Controller (DC - Server 2019)**
